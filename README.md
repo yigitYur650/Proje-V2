@@ -1,16 +1,48 @@
-# React + Vite
+# Musteri ve Siparis Yonetim Sistemi v2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu proje, bir isletmenin musterilerini yonetebilmesi, siparis sureclerini takip edebilmesi ve musteri bazli detayli raporlar alabilmesi amaciyla gelistirilmis full-stack bir web uygulamasidir. Onceki versiyonun uzerine insa edilen bu surum, veri iliskileri ve sayfa mimarisi acisindan daha gelismis bir yapi sunar.
 
-Currently, two official plugins are available:
+## Temel Ozellikler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Musteri Yonetimi: Musteri kaydi olusturma, listeleme ve detayli musteri profili goruntuleme.
+- Siparis Takibi: Yeni siparis girisi yapma ve siparislerin musteri hesaplariyla iliskilendirilmesi.
+- Dinamik Dashboard: Isletmenin genel durumunu ozetleyen ana sayfa yapisi.
+- Detayli Gorunum: Her musteriye ozel satis ve is geçmişinin takip edilebildigi alt sayfalar.
 
-## React Compiler
+## Teknik Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Frontend (Istemci)
+- React: Bilesen tabanli arayuz gelistirme.
+- Vite: Modern build araci ve hizli gelistirme ortami.
+- Tailwind CSS: Utility-first yaklasimi ile modern tasarim katmani.
+- React Router: Uygulama ici navigasyon ve sayfa yonetimi.
 
-## Expanding the ESLint configuration
+### Backend (Sunucu)
+- Go (Golang): Yuksek performansli API mimarisi.
+- Fiber v2: Hizli ve minimalist web framework.
+- Go Modules: Bagimlilik yonetimi.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Proje Yapisi
+
+- perde-backend/: Go tabanli API servislerinin ve isletme mantiginin bulundugu dizin.
+- src/pages/: Is sureclerine gore ayrilmis React sayfalarini iceren dizin.
+- src/components/: Tekrar kullanilabilir arayuz bilesenleri.
+
+## Kurulum ve Kullanim
+
+### Frontend Hazirligi
+1. Proje ana dizinine gidin.
+2. Gerekli paketleri yukleyin:
+   npm install
+3. Uygulamayi baslatin:
+   npm run dev
+
+### Backend Hazirligi
+1. perde-backend klasorune gecis yapin.
+2. Go bagimliliklarini yukleyin:
+   go mod tidy
+3. Sunucuyu calistirin:
+   go run main.go
+
+## Not
+Bu calisma, yazilim gelistirme surecimdeki moduler mimari ve veri iliskileri konusundaki yetkinliklerimi belgelemek amaciyla v2 olarak adlandirilmistir.
